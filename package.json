@@ -1,0 +1,61 @@
+{
+	"name": "webview-yaml",
+	"description": "webview yaml - A Webview API Sample",
+	"version": "0.0.1",
+	"private": true,
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/amyxia1994/webview-yaml"
+	},
+	"engines": {
+		"vscode": "^1.47.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "kusion.showPreview",
+				"title": "Open Yaml Preview",
+				"category": "Kusion",
+				"icon": {
+					"light": "./media/preview-light.svg",
+					"dark": "./media/preview-dark.svg"
+				}
+			},
+			{
+				"command": "kusion.showPreviewToSide",
+				"category": "Kusion",
+				"title": "Open Yaml Preview to the Side",
+				"icon": "$(open-preview)"
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"command": "kusion.showPreviewToSide",
+					"group": "navigation"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint . --ext .ts,.tsx",
+		"watch": "tsc -w -p ./"
+	},
+	"devDependencies": {
+		"@types/node": "^16.11.7",
+		"@types/vscode": "^1.47.0",
+		"@types/vscode-webview": "^1.57.0",
+		"@typescript-eslint/eslint-plugin": "^5.30.0",
+		"@typescript-eslint/parser": "^5.30.0",
+		"eslint": "^8.13.0",
+		"typescript": "^4.8.4"
+	}
+}
